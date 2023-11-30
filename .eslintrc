@@ -1,0 +1,42 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "import"],
+  "rules": {
+    "no-else-return": "warn" /*erro em else que não precisa*/,
+    "prefer-destructuring": "warn" /*obriga desestruturação*/,
+    "complexity": ["error", 3],
+    "import/order": [
+      /*define a ordem dos imports*/ "error",
+      {
+        "groups": [
+          "external",
+          "builtin",
+          "internal",
+          "sibling",
+          "parent",
+          "index",
+          "object"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "max-params": ["error", 4] /*define o max de parametros de uma função*/,
+    "max-lines-per-function": [
+      "error",
+      21
+    ] /*define o max de linhas de uma função*/
+  }
+}
